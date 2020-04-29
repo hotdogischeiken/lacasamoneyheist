@@ -1,0 +1,134 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #0b0831;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: rgb(5, 20, 102);
+    font-family: 'Poppins', sans-serif;
+}
+.logo{
+    color: #a7befc;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size:  17px;
+}
+.nav-links
+{
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a
+{
+    color: #a7befc;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div
+{
+    
+    width: 25px;
+    height: 3px;
+    background-color: #a7befc;
+    margin: 5px;
+
+
+} 
+.container{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.container span{
+ 
+    text-transform: uppercase;
+    display: block;
+}
+.text1{
+    color: white;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    background: #0b0831;
+    position: relative;
+    animation: text 3s 1;
+}
+.text2{
+    font-size: 30px;
+    color: rgb(111, 114, 255);
+    font-weight: 700;
+
+}
+
+
+@keyframes text{
+    0%{
+        color: #0b0831;
+        margin-bottom: -40px;
+    }
+    30%{
+        letter-spacing: 25px;
+        margin-bottom: -40px;
+    }
+    85%{
+        letter-spacing: 8px;
+        margin-bottom: -40px;
+
+    }
+}
+@media screen and (max-width:1024px){
+    .nav-links
+{
+    width: 40%;
+}
+}
+@media screen and (max-width:1000px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+      position: absolute;
+      right: 0px;
+      height: 92vh;
+      top: 8vh;
+      background-color: rgb(5, 20, 102);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+      z-index: 3;
+  }
+  .nav-links li{
+      opacity: 1;
+  }
+  .nav-links a{
+      font-size: 15px;
+  }
+  .burger{
+      display: block;
+  }
+}

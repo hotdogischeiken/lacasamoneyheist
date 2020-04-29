@@ -1,0 +1,181 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #0b0831;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: rgb(5, 20, 102);
+    font-family: 'Poppins', sans-serif;
+}
+.logo{
+    color: #a7befc;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size:  17px;
+}
+.nav-links
+{
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a
+{
+    color: #a7befc;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div
+{
+    
+    width: 25px;
+    height: 3px;
+    background-color: #a7befc;
+    margin: 5px;
+
+
+} 
+h1{
+    padding: 0;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 34px;
+    color:#a7befc ;
+    margin-bottom: 0;
+}
+.container{
+    position: relative;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-left: 175px;
+}
+.container .card .content p{
+    font-family: 'Poppins', sans-serif;
+}
+.container .card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: rgb(181, 196, 248)
+}
+.container .card:nth-child(even)
+{
+    flex-direction: column-reverse;
+
+}
+.container .card .imgBx{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: #000;
+}
+.container .card .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container .card .content{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card .content div{
+    text-align: center;
+}
+@media screen and (max-width:1024px){
+    .nav-links
+{
+    width: 40%;
+}
+}
+@media screen and (max-width:1000px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+      position: absolute;
+      right: 0px;
+      height: 92vh;
+      top: 8vh;
+      background-color: rgb(5, 20, 102);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+      z-index: 3;
+  }
+  .nav-links li{
+      opacity: 1;
+  }
+  .nav-links a{
+      font-size: 15px;
+  }
+  .burger{
+      display: block;
+  }
+  h1{
+      margin-left: 2px;
+      text-align: center;
+  }
+  .container{
+    grid-template-columns: repeat(auto-fit, minmax(100%,1fr));
+    margin: 0px;
+    width: fit-content;
+}
+.container .card{
+    flex-direction: row;
+    margin: 10px;
+}
+.container .card:nth-child(even){
+    flex-direction: row-reverse;
+}
+.container .card .imgBx,
+.container .card .content{
+    width: 50%;
+}
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px)
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+}
